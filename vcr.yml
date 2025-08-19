@@ -1,0 +1,29 @@
+project:
+  name: marketing-cloud-apis
+instance:
+  name: dev
+  runtime: nodejs18
+  region: aws.euw1
+  application-id: b47e97fe-178a-49fc-9d42-25f334462dbb
+  entrypoint: [node, index.js]
+  min-scale: 1
+  environment:
+    - name: SFMC_APP_EXT_KEY
+      value: "SFMC_APP_EXT_KEY"
+    - name: CLIENT_ID
+      value: "pp7kpxkf49nnlje9w38k1k5y"
+    - name: CLIENT_SECRET
+      value: "U7CAnYlGwADUOFh46hrRV2nW"
+    - name: SUBDOMAIN
+      value: "mc1sn32s5pn4b8sx1z39zfg6t898"
+    - name: SFMC_EXTERNAL_KEY_TRACKING
+      value: "WTS_Vonage_Tracking_POC"
+    - name: SFMC_EXTERNAL_KEY_CONSENT
+      value: "WTS_Vonage_Consent_POC"
+    - name: SFMC_EXTERNAL_KEY_FEEDBACK
+      value: "WTS_Vonage_Feedback_POC"
+    - name: DOUBLE_FORMAT_ENABLE
+      value: "true"
+debug:
+  name: debug
+  entrypoint: [nodemon, --inspect, index.js]
